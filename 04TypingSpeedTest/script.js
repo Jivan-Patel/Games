@@ -29,7 +29,31 @@ const testTexts = [
   "Working in teams teaches collaboration, patience, and the importance of communication.",
   "Practicing mindfulness can improve concentration and reduce unnecessary stress.",
   "Innovation often comes from small ideas that grow through experimentation and persistence.",
-  "Writing regularly helps organize your thoughts and boosts your ability to express ideas clearly."
+  "Writing regularly helps organize your thoughts and boosts your ability to express ideas clearly.",
+  "Artificial intelligence is transforming industries by automating complex tasks and enhancing decision-making.",
+  "Remote work has become increasingly popular, allowing employees to maintain productivity from anywhere.",
+  "Learning to code opens up countless opportunities in software development and data analysis.",
+  "Cloud computing provides scalable resources for businesses to manage data and applications efficiently.",
+  "Cybersecurity is critical in protecting sensitive information from unauthorized access and breaches.",
+  "Good keyboard shortcuts can significantly improve your efficiency while working on a computer.",
+  "The internet connects billions of people, enabling instant communication across the globe.",
+  "Regular practice with typing drills helps build muscle memory and increases accuracy over time.",
+  "Virtual reality is changing how we experience gaming, training, and even social interactions.",
+  "Data privacy laws are evolving to give individuals more control over their personal information.",
+  "Agile methodologies allow development teams to adapt quickly to changing project requirements.",
+  "Blockchain technology offers secure and transparent ways to record transactions and contracts.",
+  "Ergonomic keyboards and proper posture are key to preventing strain during long typing sessions.",
+  "Machine learning algorithms improve by analyzing large datasets and identifying patterns.",
+  "Open-source software encourages collaboration and innovation among developers worldwide.",
+  "Touch typing without looking at the keyboard is a valuable skill for professional typists.",
+  "Quantum computing promises to solve problems that are currently impossible for classical computers.",
+  "User experience design focuses on creating intuitive and enjoyable interfaces for applications.",
+  "5G networks deliver faster speeds and lower latency for mobile devices and IoT systems.",
+  "Version control systems like Git help teams track changes and collaborate on code effectively.",
+  "Regular software updates patch vulnerabilities and introduce new features to applications.",
+  "Big data analytics enables companies to gain insights and make informed business decisions.",
+  "Freelancing platforms connect skilled professionals with clients seeking specific expertise.",
+  "Automation tools streamline repetitive tasks, freeing up time for more creative work."
 ];
 
 
