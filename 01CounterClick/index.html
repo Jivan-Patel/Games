@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h1>Click Counter Game</h1>
+            <p class="subtitle">Click as fast as you can!</p>
+        </div>
+
+        <!-- Score section -->
+        <div class="score-section">
+            <div class="score-box">
+                <h2>Current Score</h2>
+                <div id="currentScore" class="score">8</div>
+            </div>
+            <div class="score-box">
+                <h2>High Score</h2>
+                <div id="highScore" class="score">8</div>
+            </div>
+            <div class="score-box">
+                <h2>Click / Second</h2>
+                <div id="cpsScore" class="score">0.00</div>
+            </div>
+        </div>
+
+        <!-- timer display -->
+        <div class="timer-section">
+            <h2>Time Remaining</h2>
+            <div id="timer" class="timer">10</div>
+        </div>
+
+        <!-- Game buttons -->
+        <div class="button-section">
+            <button id="clickButton" class="click-btn" disabled>
+                Click Me!
+            </button>
+            <button id="startButton" class="start-btn">
+                Start Game
+            </button>
+            <button id="resetButton" class="reset-btn">
+                Resert High Score
+            </button>
+            <div class="pauseResume">
+                <button id="pauseButton" class="pauseResumeBtn" disabled>
+                    Pause button
+                </button>
+                <button id="resumeButton" class="pauseResumeBtn" disabled>
+                    Resume button
+                </button>
+            </div>
+        </div>
+
+        <!-- Game Status msg -->
+        <div id="statusmessage" class="status-message">
+            Click "Start Game" to begin!
+        </div>
+    </div>
+    <div class="vdocontainer">
+        <video src="https://cdn.pixabay.com/video/2019/10/09/27669-365224683_large.mp4" id="vdo" autoplay loop muted></video>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

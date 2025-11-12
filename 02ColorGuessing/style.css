@@ -1,0 +1,139 @@
+:root{
+    --bg-color: black;
+    --txt-clr: aliceblue;
+    --border-radius: 0.5rem;
+    --sec-color: rgba(2, 169, 169, 0.9);
+    --box-light-black: rgba(255, 255, 255, 0.3);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    transition: scale 0.2s ease-in;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    color: var(--txt-clr);
+    font-size: 1em;
+}
+.container{
+    background-color: var(--bg-color);
+    width: fit-content;
+    padding: 1em;
+    border: 1px solid white;
+    border-radius: 1em;
+}
+.container>div{
+    margin: 1rem 0;
+}
+
+header h1{
+    padding: 0.5em;
+    font-size: 2em;
+}
+
+.color-display{
+    background-color: var(--txt-clr);
+    color: var(--bg-color);
+    border-radius: var(--border-radius);
+    text-transform: uppercase;
+}
+
+.message{
+    font-size: 1em;
+}
+.streak-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+.streak-box{
+    padding: 1em 0;
+    background-color: var(--box-light-black);
+    border-radius: var(--border-radius);
+    width: 30%;
+}
+.streak-number{
+    font-size: 2.5em;
+    color: var(--sec-color);
+    font-weight: bold;
+}
+.controls{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1em;
+}
+
+.controls button{
+    border: none;
+    border: 1px solid var(--txt-clr);
+    border-radius: var(--border-radius);
+    color: var(--txt-clr);
+}
+
+.control-btn{
+    background-color: var(--sec-color);
+    padding: 0.5em 1em;
+}
+
+.mode-btn{
+    background-color: var(--box-light-black);
+    padding: 0.5em 2em;
+}
+
+.color-box-container{
+    max-width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.color-box{
+    border: none;
+    background-color: aquamarine;
+    border-radius: var(--border-radius);
+    max-height: 150px;
+    max-width: 150px;
+    height: 27vw;
+    width: 27vw;
+    margin: 3px;
+}
+.color-box:disabled{
+    opacity: 0.75;
+}
+button:hover{
+    scale: 1.1;
+}
+.color-box:hover{
+    scale: 1.05;
+    /* box-shadow: rgba(255, 255, 255, 0.75) 0px 7px 29px 0px; */
+}
+.mode-btn:disabled{
+    background-color: var(--txt-clr);
+    color: var(--bg-color);
+}
+button:enabled:active{
+    scale: 1;
+}
+
+.color-box:active{
+    scale: 1 !important;
+}
+
+@media(max-width: 600px){
+    .controls{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .control-btn{
+        order: 1;
+    }
+}
