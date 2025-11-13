@@ -24,7 +24,7 @@ body{
     font-size: 1em;
 }
 .container{
-    background-color: var(--bg-color);
+    background-color: rgba(0, 0, 0, 0.75);
     width: fit-content;
     padding: 1em;
     border: 1px solid white;
@@ -106,6 +106,7 @@ header h1{
     height: 27vw;
     width: 27vw;
     margin: 3px;
+    border: 2px solid white;
 }
 .color-box:disabled{
     opacity: 0.75;
@@ -117,16 +118,34 @@ button:hover{
     scale: 1.05;
     /* box-shadow: rgba(255, 255, 255, 0.75) 0px 7px 29px 0px; */
 }
-.mode-btn:disabled{
-    background-color: var(--txt-clr);
-    color: var(--bg-color);
+#hardBtn:disabled{
+    background-color: red;
+    color: white;
+}
+#easyBtn:disabled{
+    background-color: green;
 }
 button:enabled:active{
     scale: 1;
 }
 
-.color-box:active{
-    scale: 1 !important;
+.incorrect{
+    animation: 0.2s shakeEffect ease;
+}
+
+.message span{
+    color: green;
+    font-weight: bolder;
+    font-size: 1.25rem;
+}
+
+@keyframes shakeEffect{
+    0% {transform: translateX(5px);}
+    20% {transform: translateX(-5px);}
+    40% {transform: translateX(5px);}
+    60% {transform: translateX(-5px);}
+    80% {transform: translateX(5px);}
+    100% {transform: translateX(-5px);}
 }
 
 @media(max-width: 600px){

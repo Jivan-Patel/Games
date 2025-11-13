@@ -24,7 +24,6 @@ var color = [];
 var num = 6;
 
 function webLoad() {
-    msg("Pick a color!");
     onLoad();
     displayContent();
     setGame();
@@ -103,7 +102,7 @@ function setGame() {
 }
 
 function msg(message) {
-    messageDisplay.textContent = message;
+    messageDisplay.innerHTML = message;
 }
 
 function win() {
@@ -114,23 +113,34 @@ function win() {
         if (currentStreak > bestStreak6 || bestStreak6 < 1) {
             bestStreak6 = currentStreak;
             localStorage.setItem('highBestStreak6', currentStreak);
+            colorDisplay.style.fontWeight = 'bold'
         }
     }
     else {
         if (currentStreak > bestStreak3 || bestStreak3 < 1) {
             bestStreak3 = currentStreak;
             localStorage.setItem('highBestStreak3', currentStreak);
+            colorDisplay.style.fontWeight = 'bolder'
         }
     }
 
     for (var i = 0; i < color.length; i++) {
         colorBoxes[i].disabled = false;
+        colorBoxes[i].classList.remove = "incorrect";
     }
-    webLoad()
+
+    webLoad();
+    if(currentStreak==1){
+        msg(`First Win!`);
+    }
+    else if(currentStreak>=3){
+        msg(`<span>Streak!</span>`);
+    }
 }
 function lose() {
     msg("Wrong Button, try again");
     currentStreak = 0;
+    document.body.style.backgroundColor = "var(--bg-color)";
 }
 
 function trackBtn(event) {
@@ -146,7 +156,10 @@ function trackBtn(event) {
     }
     else {
         lose();
-        event.target.pointerEvent = true;
+        element.classList.add("incorrect");
+        setTimeout(()=>{
+            element.classList.remove('incorrect')
+        },1000)
     }
     displayContent();
 }
@@ -154,9 +167,9 @@ function trackBtn(event) {
 
 function newRound() {
     currentStreak = 0;
-    setGame()
+    setGame();
     displayContent();
-    msg("New Round Started")    
+    msg("New Round Started");
 }
 
 function resetStreak() {
@@ -211,12 +224,12 @@ hardBtn.addEventListener('click', hardMode);
 
 
 
-var life = 3;
+// var life = 3;
 
-function lifeLine(){
-    life--;
-    for(let i = 0; 1 < life; i++){
-        console.log("❤️");
-    }
-}
-lifeLine()
+// function lifeLine(){
+//     life--;
+//     for(let i = 0; 1 < life; i++){
+//         console.log("❤️");
+//     }
+// }
+// lifeLine();
