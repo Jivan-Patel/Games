@@ -1,30 +1,31 @@
-:root{
-    --primary-color: rgba(111, 100, 195,1);
+:root {
+    --primary-color: rgba(111, 100, 195, 1);
     --margin-all: 0.85rem 0;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-.container > div{
+.container>div {
     margin: var(--margin-all);
 }
 
 
-h1{
+h1 {
     padding: 1em 0 0;
     color: var(--primary-color);
     opacity: 1;
 }
 
-.subtitle{
+.subtitle {
     padding: 1em 0;
     color: gray;
     font-weight: 550;
 }
-body{
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,12 +33,13 @@ body{
     min-height: 100vh;
 }
 
-h2{
+h2 {
     margin: 0;
     padding: 0;
     font-size: 1em;
 }
-.container{
+
+.container {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 0.5em;
     padding: 1rem;
@@ -47,42 +49,47 @@ h2{
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
-.score-section{
+.score-section {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
 }
-.score-box{
+
+.score-box {
     background-color: var(--primary-color);
     padding: 1rem;
     border-radius: 0.5em;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
-.score-box h2{
+
+.score-box h2 {
     color: white;
 }
-.score{
+
+.score {
     padding: 1rem 0 0;
     font-size: 2.5em;
     font-weight: bolder;
-    color: white;
+    color: white;  
+    transition: 0.2s ease all;  
 }
 
 
-.timer-section{
+.timer-section {
     width: 100%;
     background-color: #f4f3f3;
     border-radius: 0.5em;
     padding: 1rem 0;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
-.timer{
+
+.timer {
     font-size: 2.5rem;
     font-weight: bold;
     color: var(--primary-color);
 }
 
-.button-section button{
+.button-section button {
     border: none;
     border-radius: 0.5rem;
     margin: var(--margin-all);
@@ -90,33 +97,34 @@ h2{
     transition: all 0.1s ease-in;
     cursor: pointer;
 }
-.button-section>button{
+
+.button-section>button {
     display: block;
     width: 100%;
 }
-#clickButton{
-    font-size: 1.5em;
-    padding: 1em;
+
+#clickButton ,#startButton{
+    font-size: 1.25em;
+    padding: 1rem;
     background-color: var(--primary-color);
     color: white;
     font-weight: bolder;
+    height: 55px;
 }
-#startButton{
-    background-color: var(--primary-color);
-    color: white;
-    font-weight: bold;
-    font-size: 1em;
-    padding: 0.85em;
+#clickButton{
+    width: 50%;
+    margin: auto;
 }
-#resetButton{
-    font-size: 0.875em;
+
+#resetButton {
     font-weight: 550;
     background-color: rgb(254, 108, 108);
     color: white;
+    font-size: 0.875em;
     padding: 0.75em;
 }
 
-#statusmessage{
+#statusmessage {
     padding: 1em;
     background-color: #f4f3f3;
     border-radius: 0.5em;
@@ -124,38 +132,49 @@ h2{
     font-weight: bolder;
 }
 
-.button-section button:enabled:hover{
+.button-section button:enabled:hover {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
     scale: 1.02;
 }
-.button-section button:active{
+
+.button-section button:active {
     scale: 1;
 }
-#clickButton:enabled{
+
+#clickButton:enabled {
     background-color: var(--primary-color);
 }
-#startButton:disabled,#clickButton:disabled{
+
+#startButton:disabled,
+#clickButton:disabled {
     opacity: 0.5;
 }
 
-.pauseResumeBtn{
+.pauseResumeBtn {
     background-color: var(--primary-color);
     color: white;
     font-weight: bold;
     font-size: 0.85em;
     padding: 0.85em;
     width: 45%;
-        
 }
-#pauseButton:disabled{
-    display: none;
+#clickButton:hover{
+    scale: 1;
 }
-#resumeButton:disabled{
+
+#pauseButton:disabled {
     display: none;
 }
 
+#resumeButton:disabled, #resetButton:disabled {
+    display: none;
+}
 
-#vdo{
+.start-btn:disabled, .click-btn:disabled{
+    display: none;
+}
+
+#vdo {
     position: absolute;
     top: 0;
     left: 0;
