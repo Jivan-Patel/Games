@@ -15,6 +15,8 @@ const btnTrack = document.querySelector('.color-box-container');
 const colorBoxes = document.querySelectorAll('.color-box');     // return array of all btn
 // console.log(colorBoxes);
 
+const container = document.querySelector('.container');
+
 // variables
 var currentStreak = 0;
 var bestStreak6 = 0;
@@ -109,6 +111,7 @@ function win() {
     currentStreak++;
     msg("You won the Game");
     document.body.style.backgroundColor = pickCorrectColor;
+
     if (num == 6) {
         if (currentStreak > bestStreak6 || bestStreak6 < 1) {
             bestStreak6 = currentStreak;
@@ -120,20 +123,24 @@ function win() {
         if (currentStreak > bestStreak3 || bestStreak3 < 1) {
             bestStreak3 = currentStreak;
             localStorage.setItem('highBestStreak3', currentStreak);
-            colorDisplay.style.fontWeight = 'bolder'
+            colorDisplay.style.fontWeight = 'bolder';
         }
     }
 
-    for (var i = 0; i < color.length; i++) {
-        colorBoxes[i].disabled = false;
-        colorBoxes[i].classList.remove = "incorrect";
-    }
+    setTimeout(() => {
+        for (var i = 0; i < color.length; i++) {
+            colorBoxes[i].disabled = false;
+            colorBoxes[i].classList.remove = "incorrect";
+            colorBoxes[i].style.borderColor = 'currentColor';
+        }
+        document.body.style.backgroundColor = "black";
+        webLoad();
+    }, 1000)
 
-    webLoad();
-    if(currentStreak==1){
+    if (currentStreak == 1) {
         msg(`First Win!`);
     }
-    else if(currentStreak>=3){
+    else if (currentStreak >= 3) {
         msg(`<span>Streak!</span>`);
     }
 }
@@ -153,13 +160,14 @@ function trackBtn(event) {
 
     if (pickCorrectColor == rgb) {
         win();
+        element.style.borderColor = "Gold";
     }
     else {
         lose();
         element.classList.add("incorrect");
-        setTimeout(()=>{
-            element.classList.remove('incorrect')
-        },1000)
+        setTimeout(() => {
+            element.classList.remove('incorrect');
+        }, 1000)
     }
     displayContent();
 }
@@ -221,15 +229,3 @@ hardBtn.addEventListener('click', hardMode);
 
 
 
-
-
-
-// var life = 3;
-
-// function lifeLine(){
-//     life--;
-//     for(let i = 0; 1 < life; i++){
-//         console.log("❤️");
-//     }
-// }
-// lifeLine();

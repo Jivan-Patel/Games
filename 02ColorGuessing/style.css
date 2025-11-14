@@ -99,7 +99,6 @@ header h1{
 
 .color-box{
     border: none;
-    background-color: aquamarine;
     border-radius: var(--border-radius);
     max-height: 150px;
     max-width: 150px;
