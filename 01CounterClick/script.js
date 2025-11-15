@@ -83,6 +83,7 @@ function endGame() {
         high = current;
         displayMessage();
         statusMsg(`Congratulations ${player} you Won The game`);
+        alert("You Won the Game!");
         // vdocontainer.style.opacity = 1;
         document.body.style.background = 'gold'
         setTimeout(()=>{
@@ -92,9 +93,11 @@ function endGame() {
     }
     else if (current == high) {
         statusMsg(` ${player} Your current is equal to previous one`);
+        alert("You Tied the preivous high");
     }
     else {
         statusMsg(`${player} Your current score is less compare to previous high`); 
+        alert("Try again! You lose the Game!");
     }
 
 }
