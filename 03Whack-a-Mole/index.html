@@ -11,18 +11,29 @@
         <h1>🔨 Whack-a-Mole 🔨</h1>
         
         <div class="scoreboard">
+            <div class="score-box lastScoreBox">
+                <h3>Last score</h3>
+                <div id="lastGameScore">0</div>
+            </div>
             <div class="score-box">
                 <h3>Score</h3>
                 <div id="score">0</div>
             </div>
             <div class="score-box">
                 <h3>Time</h3>
-                <div id="timeLeft">30</div>
+                <div id="timeLeft">60</div>
             </div>
             <div class="score-box">
                 <h3>Best</h3>
                 <div id="maxScore">0</div>
             </div>
+            <div class="score-box">
+                <h3>Fastest Hit</h3>
+                <div id="fastestHit">0</div>
+            </div>
+        </div>
+        <div class="msgBox">
+            Click Start button to start the game!
         </div>
         
         <button id="startBtn" class="start-btn">Start Game</button>
@@ -30,7 +41,7 @@
         <div class="additionalBtn">
             <button id="pauseBtn" class="pause-btn" disabled>Pause Game</button>
             <button id="resumeBtn" class="resume-btn" disabled>Resume Game</button>
-            <button id="resetBtn" class="reset-btn">Reset High Score Game</button>
+            <button id="resetBtn" class="reset-btn">Reset Game</button>
         </div>
         
         <div class="game-board">
