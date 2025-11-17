@@ -32,8 +32,9 @@ h1 {
 
 .scoreboard {
     display: flex;
-    gap: 10px;
+    gap: 7px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .score-box {
