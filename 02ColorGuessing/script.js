@@ -109,14 +109,14 @@ function msg(message) {
 
 function win() {
     currentStreak++;
-    msg("You won the Game");
+    msg(`🎉New Best Streak!🎉`);
     document.body.style.backgroundColor = pickCorrectColor;
 
     if (num == 6) {
         if (currentStreak > bestStreak6 || bestStreak6 < 1) {
             bestStreak6 = currentStreak;
             localStorage.setItem('highBestStreak6', currentStreak);
-            colorDisplay.style.fontWeight = 'bold'
+            colorDisplay.style.fontWeight = 'bolder'
         }
     }
     else {
@@ -166,8 +166,8 @@ function trackBtn(event) {
         lose();
         element.classList.add("incorrect");
         setTimeout(() => {
-            element.classList.remove('incorrect');
-        }, 1000)
+            element.classList.remove("incorrect");
+        }, 500)
     }
     displayContent();
 }
