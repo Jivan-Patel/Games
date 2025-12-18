@@ -8,6 +8,11 @@ const bestWpmDisplay = document.querySelector('#bestWPM');
 const startBtn = document.querySelector('#startBtn');
 const resetBtn = document.querySelector('#resetBtn');
 
+const t15 = document.querySelector('#_15');
+const t30 = document.querySelector('#_30');
+const t60 = document.querySelector('#_60');
+
+
 // Test Text
 const testTexts = [
     "The quick brown fox jumps over the lazy dog. Practice makes perfect when learning to type faster.",
@@ -56,10 +61,10 @@ const testTexts = [
     "Automation tools streamline repetitive tasks, freeing up time for more creative work."
 ];
 
-
 // Game state
 let currentText = "";
-let timeLeft = 60;
+let timeSelected = null;
+let timeLeft = "-";
 let timeInterval = null;
 let startTime = null;
 let isTestActive = false;
@@ -67,9 +72,9 @@ let bestWPM = 0;
 let timerInterval = null;
 let wpm = 0;
 let currentScore = 0;
+let keepTypingStId = null;
 
 let lastTypedWords = [];
-
 
 
 function webLoad() {
@@ -94,11 +99,13 @@ function randomSentence() {
 }
 function startGame() {
     wpm = 0;
-    timeLeft = 60;
+    timeLeft = timeSelected;
     startBtn.disabled = true;
+    typingArea.disabled = false;
+    timerBtn(true);
+
     currentText = randomSentence();
     textDisplay.innerHTML = currentText;
-    typingArea.disabled = false;
     typingArea.setAttribute('placeholder', "Now you can start your typing test...");
     typingArea.value = "";
     typingArea.focus();
@@ -108,6 +115,15 @@ function startGame() {
         timeLeft--;
         if (timeLeft <= 0) {
             endGame();
+            timerDisplay.style.color = 'unset';
+            timerDisplay.style.fontSize = 'inherite';
+            timerDisplay.style.textShadiow = "none"
+        }
+        if(timeLeft<=10){
+            timerDisplay.style.color = 'red' 
+            timerDisplay.style.fontSize = '2.2em';
+            timerDisplay.style.textShadiow = `text-shadow: 0 0 10px #FFFFFF, 2px 2px 2px rgba(255, 0, 0, 0);`
+            displayContent();
         }
         displayContent();
     }, 1000);
@@ -115,9 +131,11 @@ function startGame() {
 
 function endGame() {
     clearInterval(timerInterval);
+    clearInterval(keepTypingStId);
     startBtn.disabled = false;
     typingArea.disabled = true;
-    timeLeft = 60;
+    timerBtn(false);
+    timeLeft = timeSelected;
     if (wpm > bestWPM) {
         sessionStorage.setItem('previousWpm', wpm)
         bestWPM = wpm;
@@ -132,6 +150,11 @@ function updateStatus() {
     const elapsedTime = (Date.now() - startTime) / (60 * 1000);
     wpm = Math.round((word.length + lastTypedWords.length) / elapsedTime);
 
+
+    if(wpm>100){
+        wpmDisplay.style.fontWeight = 'bold';
+    }
+
     wpmDisplay.textContent = wpm;
 
     currentScore = 0;
@@ -141,7 +164,13 @@ function updateStatus() {
         }
     }
     const accuracy = (typed.length > 0) ? Math.floor(currentScore / typed.length * 100) : 0;
-    accuracyDisplay.textContent = accuracy;
+    if(accuracy == 100){
+        accuracyDisplay.style.color = "#31f131";
+    }
+    else{
+        accuracyDisplay.style.color = "currentColor";
+    }
+    accuracyDisplay.textContent = `${accuracy}%`;
 
 }
 
@@ -149,6 +178,12 @@ function wordType() {
     // console.log(startTime);
     updateStatus();
     highlight();
+
+    clearInterval(keepTypingStId);
+    keepTypingStId = setTimeout(()=>{
+        textDisplay.innerHTML += `<span id="kt">Keep Typing...</span>`
+    },3000)
+
 }
 
 function resetSession() {
@@ -191,9 +226,34 @@ function newText() {
     }
 }
 
+function timeSelector() {
+    timeLeft = timeSelected;
+    startBtn.disabled = false;
+    displayContent();
+    textDisplay.innerHTML = `Click "Start Test" to begin typing!`
+}
+function timerBtn(value){
+    t15.disabled = value;
+    t30.disabled = value;
+    t60.disabled = value;
+}
+
 webLoad();
 startBtn.addEventListener('click', startGame);
 typingArea.addEventListener('input', wordType);
 // input will monitor whether user pressed any single key or not
 
 resetBtn.addEventListener('click', resetSession);
+
+t15.addEventListener('click', function (){
+    timeSelected = 15;
+    timeSelector();
+})
+t30.addEventListener('click', function (){
+    timeSelected = 30;
+    timeSelector();
+})
+t60.addEventListener('click', function (){
+    timeSelected = 60;
+    timeSelector();
+})
