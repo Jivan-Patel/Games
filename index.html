@@ -3,18 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game</title>
+    <title>JS Games Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./landing.css">
 </head>
 <body>
-    <div class="container">
-        <ul>
-            <li><a href="./01CounterClick/index.html">Click Counter</a></li>
-            <li><a href="./02ColorGuessing/index.html">Color Guessing</a></li>
-            <li><a href="./03Whack-a-Mole/index.html">Whack a Mole</a></li>
-            <li><a href="./04TypingSpeedTest/index.html">Typing Speed Test</a></li>
-            <li><a href="./05MemoryFlipCard/index.html">Memory Flip</a></li>
-            <li><a href="./06ToDoChallenge/index.html">To Do List</a></li>
+    <main class="page">
+        <header class="hero">
+            <span class="badge">Vanilla JS Collection</span>
+            <h1>Mini Games and Challenges</h1>
+            <p>
+                A clean launchpad to play all projects in this repository. Pick a game,
+                improve your reflexes, typing speed, or logic, and track your best scores.
+            </p>
+            <div class="meta">
+                <span>7 projects</span>
+                <span>HTML + CSS + JavaScript</span>
+                <span>No setup required</span>
+            </div>
+        </header>
+
+        <ul class="grid">
+            <li class="card">
+                <h2>Tic-Toe-Tic</h2>
+                <p>Classic two-player board game with both 3x3 and 6x6 variants.</p>
+                <div class="tags">
+                    <span>2 Player</span>
+                    <span>Strategy</span>
+                </div>
+                <div class="actions">
+                    <a class="btn" href="./00Tic-Toe-Tic/index.html">Play Tic-Toe-Tic</a>
+                </div>
+            </li>
+
+            <li class="card">
+                <h2>Click Counter</h2>
+                <p>Click as fast as possible in 10 seconds and try to beat your high score.</p>
+                <div class="tags">
+                    <span>Speed</span>
+                    <span>CPS Tracker</span>
+                </div>
+                <div class="actions">
+                    <a class="btn" href="./01CounterClick/index.html">Play Click Counter</a>
+                </div>
+            </li>
+
+            <li class="card">
+                <h2>Color Guessing</h2>
+                <p>Guess the correct RGB color from the given choices in easy and hard modes.</p>
+                <div class="tags">
+                    <span>RGB</span>
+                    <span>Streak Mode</span>
+                </div>
+                <div class="actions">
+                    <a class="btn" href="./02ColorGuessing/index.html">Play Color Guessing</a>
+                </div>
+            </li>
+
+            <li class="card">
+                <h2>Whack-a-Mole</h2>
+                <p>Hit moles before time runs out and challenge your fastest reaction time.</p>
+                <div class="tags">
+                    <span>Reflex</span>
+                    <span>Timer</span>
+                </div>
+                <div class="actions">
+                    <a class="btn" href="./03Whack-a-Mole/index.html">Play Whack-a-Mole</a>
+                </div>
+            </li>
+
+            <li class="card">
+                <h2>Typing Speed Test</h2>
+                <p>Type random sentences, measure WPM and accuracy, and improve consistency.</p>
+                <div class="tags">
+                    <span>WPM</span>
+                    <span>Accuracy</span>
+                </div>
+                <div class="actions">
+                    <a class="btn" href="./04TypingSpeedTest/index.html">Start Typing Test</a>
+                </div>
+            </li>
+
+            <li class="card">
+                <h2>Memory Flip Card</h2>
+                <p>Match hidden card pairs before the clock ends with minimum moves possible.</p>
+                <div class="tags">
+                    <span>Memory</span>
+                    <span>Match Pairs</span>
+                </div>
+                <div class="actions">
+                    <a class="btn" href="./05MemoryFlipCard/index.html">Play Memory Flip</a>
+                </div>
+            </li>
+
+            <li class="card">
+                <h2>To-Do Challenge</h2>
+                <p>Manage tasks with add, complete, filter, and bulk delete actions.</p>
+                <div class="tags">
+                    <span>Productivity</span>
+                    <span>Task Manager</span>
+                </div>
+                <div class="actions">
+                    <a class="btn" href="./06ToDoChallenge/index.html">Open To-Do Challenge</a>
+                </div>
+            </li>
         </ul>
-    </div>
+
+        <p class="footer-note">Tip: Some games store your best score in browser storage, so your progress can remain between sessions.</p>
+    </main>
 </body>
 </html>
