@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+
+:root {
+    --hub-bg: #f5f7fb;
+    --hub-ink: #14213d;
+    --hub-muted: #4e5d78;
+    --hub-surface: #ffffff;
+    --hub-line: #dbe2ef;
+    --hub-brand: #ff7a18;
+    --hub-brand-2: #ff4f00;
+    --hub-soft: #ecfffb;
+    --hub-soft-line: #c6f0ea;
+    --hub-shadow: 0 12px 35px rgba(20, 33, 61, 0.12);
+}
+
+* {
+    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+}
+
+body {
+    color: var(--hub-ink) !important;
+    background:
+        radial-gradient(circle at 15% 10%, #fff6ec 0%, transparent 30%),
+        radial-gradient(circle at 92% 88%, #e8fff9 0%, transparent 34%),
+        var(--hub-bg) !important;
+}
+
+.container {
+    background: var(--hub-surface) !important;
+    border: 1px solid var(--hub-line) !important;
+    box-shadow: var(--hub-shadow) !important;
+}
+
+.container > * + * {
+    margin-top: 1rem;
+}
+
+h1,
+h2,
+h3,
+.head,
+#colorDisplay,
+#message {
+    color: var(--hub-ink) !important;
+}
+
+p,
+.subtitle,
+.msgBox,
+#statusmessage,
+.text-display,
+.completed-task,
+.remaining-task {
+    color: var(--hub-muted) !important;
+}
+
+button,
+.btn,
+.start-btn,
+.reset-btn,
+.pause-btn,
+.resume-btn,
+.control-btn,
+.mode-btn,
+.dropbtn,
+#startBtn,
+#resetBtn,
+#startButton,
+#resetButton,
+#pauseButton,
+#resumeButton,
+#clickButton,
+#newRoundBtn,
+#easyBtn,
+#hardBtn,
+#resetStreakBtn {
+    border: none !important;
+    background: linear-gradient(135deg, var(--hub-brand), var(--hub-brand-2)) !important;
+    color: #ffffff !important;
+}
+
+button:disabled,
+.btn:disabled,
+#startBtn:disabled,
+#clickButton:disabled,
+#startButton:disabled {
+    opacity: 0.6;
+}
+
+.score-section,
+.streak-section,
+.controls,
+.scoreboard,
+.stats-bar,
+.time-select-bar,
+.additionalBtn,
+.button-section,
+.todos-filter,
+.filters,
+.input-section {
+    gap: 0.9rem;
+}
+
+.stats-bar,
+.score-section,
+.streak-section,
+.controls,
+.time-select-bar,
+.additionalBtn,
+.todos-filter,
+.filters {
+    margin: 1rem 0;
+}
+
+.score-box,
+.streak-box,
+.stat-box,
+.todo-item,
+.timer-section,
+#statusmessage,
+.text-display,
+#typingArea {
+    border-radius: 12px;
+}
+
+.score-box,
+.streak-box,
+.stat-box,
+.scoreboard > div,
+.todo-item,
+.timer-section,
+#statusmessage,
+.text-display,
+.input,
+#typingArea,
+#all-todos .todo-item,
+.winnerprint {
+    background: var(--hub-surface) !important;
+    border: 1px solid var(--hub-line) !important;
+    color: var(--hub-ink) !important;
+    box-shadow: 0 6px 15px rgba(20, 33, 61, 0.08);
+}
+
+.color-display,
+.message span,
+.streak-number,
+.timer,
+.score,
+#wpm,
+#accuracy,
+#bestWPM,
+#score,
+#maxScore,
+#fastestHit,
+#lastGameScore {
+    color: var(--hub-ink) !important;
+}
+
+.card .front {
+    background: var(--hub-soft) !important;
+    border-color: var(--hub-soft-line) !important;
+}
+
+.card .back {
+    background: linear-gradient(135deg, var(--hub-brand), var(--hub-brand-2)) !important;
+}
+
+/* Keep Tic-Toe-Tic board cells distinct from page buttons */
+.game .btn {
+    background: #e8fff9 !important;
+    color: #14213d !important;
+    border: 2px solid #00a89d !important;
+}
+
+.game .btn:hover {
+    background: #d2fff5 !important;
+}
+
+.game .btn:disabled {
+    opacity: 1 !important;
+    background: #e8fff9 !important;
+    color: #14213d !important;
+}
+
+a {
+    color: var(--hub-brand-2);
+}
+
+a:hover {
+    color: var(--hub-brand);
+}
